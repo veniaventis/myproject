@@ -1,0 +1,16 @@
+current_hand =  [2, 3, 4, 10, 'Q', 5] 
+
+# ваше решение ниже:
+card_dict = {
+            '+1': [2,3,4,5,6],
+            '0': [7,8,9],
+            '-1': [10,'J', 'Q', 'K', 'A']
+            }
+weight_card = []
+for x in current_hand:
+    for k, v in card_dict.items():
+        for n in v:
+            if x == n:
+               weight_card.append(int(k)) 
+cards_sum = sum(weight_card)           
+print(cards_sum)
