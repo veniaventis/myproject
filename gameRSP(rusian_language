@@ -1,0 +1,50 @@
+import random
+
+print('Привет это игра Камень, Ножницы, Бумага')
+my_name = input('Как тебя зовут?')
+
+figure = ['К', 'Н', 'Б']
+
+counter = True
+while counter:
+    random_number = random.randint(0, 2)
+    computer_choise = figure[random_number]
+    palyer_choise = input(f'{my_name}, Выбери букву которая называет твою фигуру: К - камень, Н - ножницы, Б - бумага. Твой выбор: ').lower()
+    
+    if computer_choise == 'К' and  palyer_choise == 'Н':
+        print(f'Компьютер поставил {computer_choise}. ТЫ проиграл. ')
+        
+        
+    if computer_choise == 'К' and  palyer_choise == 'Б':
+        print(f'Компьютер поставил {computer_choise}. ТЫ выйграл. ')
+        
+        
+    if computer_choise == 'К' and  palyer_choise == 'К':
+        print(f'Компьютер поставил {computer_choise}. Ничья ')
+    
+    if computer_choise == 'Н' and  palyer_choise == 'К':
+        print(f'Компьютер поставил {computer_choise}. ТЫ выйграл. ')
+       
+    if computer_choise == 'Н' and  palyer_choise == 'Н':
+        print(f'Компьютер поставил {computer_choise}. Ничья. ')
+       
+    if computer_choise == 'Н' and  palyer_choise == 'Б':
+        print(f'Компьютер поставил {computer_choise}. ТЫ выйграл. ')
+    
+    if computer_choise == 'Б' and  palyer_choise == 'К':
+        print(f'Компьютер поставил {computer_choise}. ТЫ проиграл. ')
+        
+        
+    if computer_choise == 'Б' and  palyer_choise == 'Н':
+        print(f'Компьютер поставил {computer_choise}. ТЫ выйграл. ')
+        
+        
+    if computer_choise == 'Б' and  palyer_choise == 'Б':
+        print(f'Компьютер поставил {computer_choise}. Ничья ')
+
+    play_again = input('Хотите сыграть еще?(Если хотите, то напишите "да")')
+
+    if play_again == 'да':
+        counter = True
+    else:
+        counter = False
