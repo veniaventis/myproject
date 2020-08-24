@@ -1,0 +1,25 @@
+import random
+
+my_name = input('Привет! Введите свое имя: ')
+
+random_number = random.randint(1, 50)
+attempt = 9
+
+while attempt > 0:
+    gues_number = int(input(f'Ну что ж, ' + my_name +' Угадайте число которое загадал компьютер:' ))
+
+    if gues_number > random_number:
+        print('Ваше число больше загаданого. Пробуйте еще. У тебя осталось '+ str(attempt) + ' попытки')
+        attempt -= 1
+    
+    elif gues_number < random_number:
+        print('Ваше число меньше загаданого. Пробуйте еще. у тебя осталось '+ str(attempt) + ' попытки')
+        attempt -= 1
+        
+    elif gues_number == random_number:
+        break
+
+if gues_number == random_number:
+    print('Красава! Вы угадали число с ' + str(attempt) + ' попытки.' )
+elif gues_number != random_number:
+    print('Я уверен Вы старались как могли. :-(')
